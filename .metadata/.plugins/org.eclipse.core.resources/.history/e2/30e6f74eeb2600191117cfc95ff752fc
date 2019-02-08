@@ -1,0 +1,17 @@
+package com.bit.codesquare.dto.comment;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode(callSuper=true)
+@Data
+@Getter
+@Setter
+public class LectureReview extends Comment{
+
+	String Thumbnail;
+	int like;
+
+
+	
+}
