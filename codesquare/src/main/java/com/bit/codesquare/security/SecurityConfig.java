@@ -67,6 +67,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.defaultSuccessUrl("/").failureUrl("/member/login?error").and().logout()
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
 				.logoutSuccessUrl("/"); /* 로그아웃 성공시 리다이렉트 url */
+		http
+		   		.headers()
+		   		.frameOptions()
+		        .sameOrigin();
+
 	}
 
 	@Bean
