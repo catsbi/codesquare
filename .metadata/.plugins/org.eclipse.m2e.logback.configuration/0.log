@@ -6281,3 +6281,18 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.webjars:f
 2019-02-08 11:42:24,606 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 501 resources
 2019-02-08 11:42:24,658 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2019-02-08 11:42:24,664 [Worker-44: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\codesquaregit\codesquare\codesquare\src\test\resources
+2019-02-08 11:44:01,904 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-08 11:44:01,957 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-02-08 11:44:02,009 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 501 resources
+2019-02-08 11:44:02,063 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-08 11:44:02,063 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\codesquaregit\codesquare\codesquare\src\test\resources
+2019-02-08 11:44:27,088 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-08 11:44:27,137 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-02-08 11:44:27,201 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 501 resources
+2019-02-08 11:44:27,266 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-08 11:44:27,272 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\codesquaregit\codesquare\codesquare\src\test\resources
+2019-02-08 11:45:15,095 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-08 11:45:15,143 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2019-02-08 11:45:15,197 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 501 resources
+2019-02-08 11:45:15,244 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2019-02-08 11:45:15,244 [Worker-55: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\codesquaregit\codesquare\codesquare\src\test\resources

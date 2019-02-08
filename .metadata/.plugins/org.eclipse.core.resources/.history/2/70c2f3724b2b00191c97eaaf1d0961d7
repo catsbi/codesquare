@@ -93,7 +93,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		   		.headers()
 		   		.frameOptions()
 		        .sameOrigin();
-
+				.defaultSuccessUrl("/").failureUrl("/member/login?error").and().logout().invalidateHttpSession(true)
+				.clearAuthentication(true).logoutRequestMatcher(new AntPathRequestMatcher("/logout")).permitAll()
+				.logoutSuccessUrl("/") /* 로그아웃 성공시 리다이렉트 url */
+		;
 
 	}
 
