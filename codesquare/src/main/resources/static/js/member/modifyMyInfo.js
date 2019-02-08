@@ -43,7 +43,6 @@ $(function(){
 		$.ajax({
 			type : "post",
 			data : JSON.stringify(data),
-			
 			url : "changePw",
 			contentType : "application/json; charset=UTF-8",
 			success : function(response) {
