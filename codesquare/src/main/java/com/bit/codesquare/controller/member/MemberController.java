@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -49,6 +50,7 @@ public class MemberController {
 	@PostMapping("/signUp")
 	public String signUp(Model model, @ModelAttribute Member member, @RequestParam String userId,
 			@RequestParam String password) {
+		member.setAuthorId(1);
 		member.setPassword(new BCryptPasswordEncoder().encode(password));
 		mm.signUp(member);
 		model.addAttribute("user", mm.getUser(userId));
@@ -63,7 +65,7 @@ public class MemberController {
 
 		int count = 0;
 		count = mm.idCheck(userId);
-
+		logger.info(count+"count");
 		return count;
 	}
 
@@ -73,7 +75,7 @@ public class MemberController {
 
 		int count = 0;
 		count = mm.emailCheck(email);
-
+		logger.info(email);
 		return count;
 	}
 
@@ -134,20 +136,36 @@ public class MemberController {
 		return "member/login/findIdPw";
 	}
 	
-//	@PostMapping("findId")
-//	public String findId() {
-//		return "Login/Login/findId";
-//	}
-	@PostMapping("/findPw")
-	public String findPw() {
-		return "member/login/findPw";
-	}
 	
+	
+	@GetMapping("/findId")
+	public String findId() {
+		return "member/login/findId";
+	}
 	@PostMapping("/findId")
 	public String findIdDone(HttpServletResponse response, @RequestParam String email, Model model) {
 		model.addAttribute("findIdDone", mm.findId(email));
 		return "findId";
 	}
+	
+	@GetMapping("/findPw")
+	public String findPw() {
+		return "member/login/findPw";
+	}
+	
+	@PostMapping("/findPw")
+	public String findPw(@RequestParam String email) {
+		return "member/login/findPw";
+	}
+	
+	
+//	@RequestMapping("/myPage")
+//	public String myPage(Model model, Principal principal, @ModelAttribute Member member) {
+//		String userId = principal.getName();
+//		model.addAttribute("user", mm.getUser(userId));
+//		return "member/myPage/myPage";
+//	}
+	
 	
 	@RequestMapping("/myPage")
 	public String myPage(Model model, Principal principal, @ModelAttribute Member member) {
