@@ -180,17 +180,20 @@ li{
      
 }
 
-#noti-list{
-  width: 100%
-}
+/* #noti-list{
+	 width: 100%
+} */
 
 .notification{
   border-bottom: solid 1px #dddddd;
+  width: 100%
 }
 
 img{
   vertical-align: middle;
   border: 0;
+  width : 30px;
+  height : 30px;
 }
 
 .noti-main {

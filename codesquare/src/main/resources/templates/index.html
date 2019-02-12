@@ -5,11 +5,12 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
 <meta charset="utf-8" />
-<link rel="stylesheet" type="text/css" th:href="@{static/styles/indexCustom.css}">
-
+<link rel="stylesheet" type="text/css"	th:href="@{static/styles/indexCustom.css}">
 </head>
-<body>
+
+
 	<div class="container" layout:fragment="content">
+	
 		<div class="jumbotron">
 			<h1 class="display-3">Hello, world!</h1>
 			<p class="lead">공부할 준비 되셨나요?</p>
@@ -179,13 +180,16 @@
 					</ul>
 					<!-- Tab panes -->
 					<div class="tab-content">
-						<div id="pane"	class="list-group list-group-flush container tab-pane active">
+						<div id="pane"
+							class="list-group list-group-flush container tab-pane active">
 						</div>
 					</div>
 				</div>
 				<div class="board_table  col-sm-6">
 					<h5>IT News</h5>
-					<div id="itpane" class="list-group list-group-flush container tab-pane active" style="position: relative;top: 41px;"></div>
+					<div id="itpane"
+						class="list-group list-group-flush container tab-pane active"
+						style="position: relative; top: 41px;"></div>
 				</div>
 			</div>
 		</div>
@@ -197,6 +201,7 @@
 		<script th:src="@{static/js/mainCustom.js}"></script>
 		
 		
+	
 	</div>
 	<!-- end content -->
 

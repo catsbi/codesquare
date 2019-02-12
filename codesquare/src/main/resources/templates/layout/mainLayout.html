@@ -26,7 +26,6 @@
 <!-- 페이지의 헤더부분 -->
 <header th:replace="fragments/header :: headerFragment"></header>
 
-
 <!-- 페이지의 content -->
 <div layout:fragment="content" style="margin-bottom: 100px;"></div>
 
@@ -38,6 +37,7 @@
 <script th:src="@{/webjars/bootstrap/4.2.1/js/bootstrap.js}"></script>
 <script th:src="@{/webjars/bootstrap-select/1.13.3/js/bootstrap-select.js}"></script>
 <script th:src="@{/webjars/waypoints/4.0.1/lib/jquery.waypoints.js}"></script>
+
 <script th:src="@{/static/plugins/greensock/TweenMax.min.js}"></script>
 <script th:src="@{/static/plugins/greensock/TimelineMax.min.js}"></script>
 <script th:src="@{/static/plugins/scrollmagic/ScrollMagic.min.js}"></script>
@@ -48,6 +48,13 @@
 <script th:src="@{/static/plugins/progressbar/progressbar.min.js}"></script>
 <script th:src="@{/static/plugins/colorbox/jquery.colorbox-min.js}"></script>
 <script th:src="@{/static/plugins/parallax-js-master/parallax.min.js}"></script>
+<script type="text/javascript"
+	src="//cdn.jsdelivr.net/sockjs/1.0.3/sockjs.min.js"></script>
+<script type="text/javascript"
+	src="//cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+	
+	
+<script th:src="@{/static/js/notice/sockjs.js}"></script>
 <script th:src="@{/static/js/custom.js}"></script>
 <script th:src="@{/static/js/notice/notice.js}"></script>
 
