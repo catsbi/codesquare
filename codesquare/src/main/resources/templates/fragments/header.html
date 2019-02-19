@@ -47,17 +47,16 @@
 					</ul></li>
 			</ul>
 
-
-
-
-
-
 			<div sec:authorize="isAuthenticated()">
 				<!--버튼 테스트-->
 				<div class="well">
-					<button id="btnSend" onclick="reply()">Notice Message</button>
+				<!-- <button onclick="noticeviewList()">noticeviewList()</button> -->
+					<button onclick="reply()">Notice Message</button>
+					<button id="btnSend" onclick="join()">가입했어</button>
+					<button id="disconnect" onclick="disconnect()">Disconnect</button>
 				</div>
 				<!--  -->
+
 				<ul>
 					<li><span id="headerNickName" th:text="${session.nickName}"></span>
 						님! 안녕하세요.</li>
@@ -74,33 +73,31 @@
 
 						<div class="noti-count">3</div>
 
-
-
 						<div id="myDropdown" class="dropdown-content">
 							<div class="header">
 								<span> 알림</span>
 								<button id="read-btn">읽은 알림 삭제</button>
-								<button id="all-btn">모두삭제 l</button>
+								<button id="all-btn" onclick="allDelete()">모두삭제 l</button>
 							</div>
-
-							<ul id="messages">
-								<!-- <li id="messages" class="notification" ><a href="/"> <img
-								src="https://previews.123rf.com/images/hanaschwarz/hanaschwarz1211/hanaschwarz121100002/16260237-%ED%9D%B0%EC%83%89-%EB%B0%B0%EA%B2%BD%EC%97%90-%EA%B3%A0%EB%A6%BD-%EB%B9%A8%EA%B0%84-%EB%A6%AC%EB%B3%B8%EA%B3%BC-%EC%A2%85.jpg"
-								 />
-								<div class="noti-main">
-									 <div style="clear: both;"></div>
-									<div class="noti-title-only">
-										<span class="remarkable-viewer"></span>
-										<p>
-											<strong>스터디</strong>참여중인 강남스터디 일정 D-3입니다.
-										</p>
-										<div class="noti-date">2019.01.27 17:08</div>
-									</div> 
-								</div>
-						</a></li> -->
+							
+								<!-- <li id="headerNickName" th:text="${session.userId}"></li> -->
+							<ul id="messages" name= "messages">
+						<!--	<li th:text="${notice.NoticeContent}"></li>
+									 <ul th:each="notice : ${noticeList}"> -->
+							<!-- 	<li th:text="${notice.userId}"></li>
+								<li th:text="${notice.NoticeContent}"></li> -->
+									 <!-- <li class="notification" ><a href="/"></a></li> -->
 							</ul>
+							 
+							<!--디비테스트-->
+							 <ul th:each="notice : ${noticeList}"> 
+							 	<li th:text="${notice.userId}">디비테스트 li</li>
+								<li th:text="${notice.NoticeContent}"></li>
+							</ul>
+							<!--/디비테스트-->
+							
 						</div>
-					</div>
+					</div> <!--알림 div-->
 
 				</ul>
 			</div>
@@ -116,13 +113,5 @@
 		</div>
 	</nav>
 
-
-
-	<!-- <h3>메시지:</h3>
-		<ol id="messages"></ol>
-		
-		 -->
-
 </header>
-
 </html>

@@ -147,6 +147,7 @@ $("#signUp").click(function() {
 	if (idck == 1 && emailck == 1 && pwck == 1) {
 		if ($("#agree").is(":checked")) {
 			$("#signUpForm").attr('action', "signUp").submit();
+			//join();
 		} else {
 			alert("체크해주세요.");
 		}

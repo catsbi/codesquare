@@ -1,4 +1,4 @@
-package com.bit.codesquare;
+package com.bit.codesquare.controller.notice;
 
 
 import org.springframework.context.annotation.Configuration;

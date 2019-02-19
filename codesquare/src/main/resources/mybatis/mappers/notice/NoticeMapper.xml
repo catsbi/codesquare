@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bit.codesquare.mapper.notice.NoticeMapper">
+
+<!-- 	<select id="nameView" resultType="Notice">
+		 SELECT *
+		 FROM Notice	 
+	</select> -->
+	
+	<!--  <select id="insert" parameterType="String">
+		INSERT INTO codesquare.Notice (noticeContent,noticeLink) VALUES 
+		(#{qq},#{aaa})
+	</select> -->
+	
+</mapper>

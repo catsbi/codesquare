@@ -1,4 +1,4 @@
-package com.bit.codesquare;
+package com.bit.codesquare.dto.notice;
 
 
 import java.text.SimpleDateFormat;
@@ -16,10 +16,10 @@ public class Producer {
 	 @Autowired
 	 private SimpMessagingTemplate template;
 	
-	 public String sendMessageTo(String topic, String message) {
+	 public String sendMessageTo(String topic, String zz) {
 		 	StringBuilder builder = new StringBuilder();
-		 	builder.append(message);
-		 	builder.append("[");
+		 	builder.append(zz);
+		 	builder.append("[^^^^^&&&");
 		 	builder.append(dateFormatter.format(new Date()));
 		 	builder.append("] ");
 		 	
