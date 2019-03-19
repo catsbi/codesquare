@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.bit.codesquare.dto.board.Board;
 import com.bit.codesquare.dto.member.InstructorInfo;
 import com.bit.codesquare.dto.member.JoiningAndRecruitmentLog;
 import com.bit.codesquare.dto.member.Member;
@@ -236,8 +237,10 @@ public class MemberController {
 
 		model.addAttribute("user", mm.getUser(userId));
 		model.addAttribute("count", mm.getMyCount(userId));
-		model.addAttribute("wlist", csu.getDateTimeCompareObject(ms.getWantedList(userId, cri)));
-		logger.info(mm.getWantedList(userId, cri).toString()+"durldy");
+		
+		
+		model.addAttribute("wlist", ms.getWantedList(userId, cri));
+	
 		cri.setPerPageNum(10);
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);

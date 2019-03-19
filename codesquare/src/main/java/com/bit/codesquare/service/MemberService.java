@@ -9,17 +9,20 @@ import javax.mail.internet.MimeMessage;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.json.BasicJsonParser;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.bit.codesquare.dto.board.Board;
+import com.bit.codesquare.dto.member.JoiningAndRecruitmentLog;
 import com.bit.codesquare.dto.member.Member;
 import com.bit.codesquare.dto.member.MessageInfo;
 import com.bit.codesquare.dto.paging.Criteria;
 import com.bit.codesquare.mapper.member.MemberMapper;
 import com.bit.codesquare.mapper.member.MessageInfoMapper;
+import com.bit.codesquare.util.CodesquareUtil;
 
 @Service
 public class MemberService {
@@ -33,12 +36,25 @@ public class MemberService {
 	@Autowired
 	MessageInfoMapper mim;
 
+	@Autowired
+	CodesquareUtil csu;
+	
 	public List<Board> getWantedList(String userId, @Param("cri") Criteria cri) {
 
 		List<Board> list = mm.getWantedList(userId, cri);
 		for (Board item : list) {
-			item.setWantedPlist(mm.getWantedPList(item.getId()));
+			item.setWriteDateBoard(csu.compareDateTime(item.getWriteDate()));
+			BasicJsonParser jsonParser = new BasicJsonParser();
+			List<JoiningAndRecruitmentLog> wantedList = mm.getWantedPList(item.getId());
+			for (JoiningAndRecruitmentLog item2 : wantedList) {
+				item2.setApplyMap(jsonParser.parseMap(item2.getApplyContent()));
+				item2.setApplyDateString(csu.compareDateTime(item2.getApplyDate()));
+			}
+			item.setWantedPlist(wantedList);
+		
+		
 		}
+		
 
 		return list;
 	}
