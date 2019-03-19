@@ -30,7 +30,7 @@
 				<div class="col-md-5" th:text="${alist.title}"></div>
 				<div class="col-md-3">
 					<span th:text="${alist.applyMap.get('신청메세지')}"></span>
-					<div th:each=" list : ${alist.applyMap}">
+					<div th:each=" list : ${alist.applyMap}" class="small">
 						<th:block th:if="${list.key}!='신청메세지'">
 							<span th:text=${list.key}></span> : 
 							<span th:text=${list.value}></span>

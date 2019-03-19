@@ -2,6 +2,7 @@ package com.bit.codesquare.dto.board;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 import com.bit.codesquare.dto.member.JoiningAndRecruitmentLog;
 import com.bit.codesquare.util.ComparableDateTime;
@@ -40,6 +41,7 @@ public class Board implements ComparableDateTime{
 	String extension;
 	String thumbnailPath;
 	List <JoiningAndRecruitmentLog> wantedPlist;
+	
 	
 	@Override
 	public LocalDateTime getDateTimeCompare() {

@@ -136,7 +136,7 @@
 		select Id, BoardKindId, Title, WriteDate, Status, GroupId from Board
 		where UserId= #{userId} AND
 		(BoardKindId='SmnMo' or
-		BoardKindId='StdMo')
+		BoardKindId='StdMo') order by WriteDate desc
 		limit
 		#{cri.pageStart}, #{cri.perPageNum}
 	</select>
@@ -156,7 +156,7 @@
 		a.Status from
 		JoiningAndRecruitmentLog a join Board b on a.BoardId =
 		b.Id where
-		b.Id=#{boardId}
+		b.Id=#{boardId} order by a.ApplyDate desc
 	</select>
 
 
